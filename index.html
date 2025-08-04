@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A. MUKHERJEE, PMP, CSPO</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+<script defer>
+  function showProject(id) {
+    document.querySelectorAll('.project-details').forEach(p => p.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const grid = document.querySelector('.card-grid');
+    const leftBtn = document.querySelector('.nav-arrow.left');
+    const rightBtn = document.querySelector('.nav-arrow.right');
+    const dots = document.querySelectorAll('.dot');
+    const cards = document.querySelectorAll('.card');
+    const cardsPerSlide = 3;
+    const cardWidth = cards[0].offsetWidth + 24; // card width + gap
+    const totalSlides = Math.ceil(cards.length / cardsPerSlide);
+    let currentSlide = 0;
+
+    function updateCarousel() {
+      const offset = currentSlide * cardWidth * cardsPerSlide;
+      grid.scrollTo({ left: offset, behavior: 'smooth' });
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === currentSlide));
+        // Hide arrows if only 1 slide
+  leftBtn.style.display = rightBtn.style.display = (totalSlides <= 1) ? 'none' : 'block';
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    }
+
+    rightBtn.addEventListener('click', nextSlide);
+    leftBtn.addEventListener('click', prevSlide);
+
+    updateCarousel();
+  });
+</script>
+
+  </head>
+  <body>
+    <header>
+      <h1>A. MUKHERJEE, PMP®, CSPO®</h1>
+      <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/amj01" class="custom-link" target="_blank">https://www.linkedin.com/in/amj01</a><p>
+    </header>
+    <main>
+	<div class="container">
+      <section class="about">
+        <h2>About</h2>
+  <p>
+    Digital Transformation Specialist with 10 years of experience supporting technology-enabled change across enterprise systems and AI initiatives. Skilled in executing projects, analysing business needs, and improving processes through practical, hands-on solutions.
+    <br><br>Scroll down and click <strong>"Learn more"</strong> to see some projects I have worked on. 
+  </p>
+ <!-- <h3>Specialties</h3>
+  <ul>
+    <li>Project & Programme Delivery</li>
+    <li>Fit/Gap Analysis & Requirements Gathering</li>
+    <li>Process Mapping (incl. Value Stream Mapping)</li>
+    <li>Supporting Technical Team Collaboration</li>
+    <li>Cost-Benefit Evaluation & Reporting</li>
+    <li>3rd Party Integration Evaluation and Assessment</li>
+    <li>Data Migration Planning</li>
+    <li>Product-Market Fit assessment (including BRD, PRD prep)</li>
+  </ul>-->
+      </section>
+
+<section class="portfolio">
+  <h2>Portfolio</h2>
+  <div class="card-grid-wrapper">
+    <button class="nav-arrow left">&#10094;</button>
+
+    <div class="card-grid">
+      <div class="card">
+        <img src="assets/images/project1.jpg" alt="Project 1">
+        <h3>Company Expense Tracker using OCR</h3>
+        <p>Explore how receipts and invoices can be easily processed on the go using smartphones.</p>
+        <button onclick="showProject('project1')">Learn more</button>
+      </div>
+      <div class="card">
+        <img src="assets/images/project2.jpg" alt="Project 2">
+        <h3>Semiconductor Nonconformance Monitoring</h3>
+        <p>Simplify integration with MES and ERP systems through lightweight monitoring of equipment defects. </p>
+        <button onclick="showProject('project2')">Learn more</button>
+      </div>
+      <div class="card">
+        <img src="assets/images/project3.jpg" alt="Project 3">
+        <h3>Automated ISO Certificate Validation</h3>
+        <p>Track and monitor ISO compliance of manufacturers to ensure adherence to organisational and regulatory compliance requirements.</p>
+        <button onclick="showProject('project3')">Learn more</button>
+      </div>
+      <div class="card">
+        <img src="assets/images/project4.jpg" alt="Project 4">
+        <h3>Maintenance Bot for Teams</h3>
+        <p>Streamline maintenance reporting by allowing production workers to raise, track, and escalate requests directly through Microsoft Teams.</p>
+        <button onclick="showProject('project4')">Learn more</button>
+      </div>
+
+      <div class="card">
+        <img src="assets/images/project5.jpg" alt="Project 5">
+        <h3>RAG Chatbot for Project Managers</h3>
+        <p>Answer project-related queries by searching internal documentation first, and using the web if needed.</p>
+        <button onclick="showProject('project5')">Learn more</button>
+      </div>
+
+      <div class="card">
+        <img src="assets/images/project6.jpg" alt="Project 6">
+        <h3>Automated EVM Dashboard Generator</h3>
+        <p>Upload Excel or CSV files to generate real-time dashboards showing whether a project is on track and on budget.</p>
+        <button onclick="showProject('project6')">Learn more</button>
+      </div>
+    </div>
+
+    <button class="nav-arrow right">&#10095;</button>
+  </div>
+
+        <div class="dots">
+          <span class="dot"></span>
+          <!-- <span class="dot"></span>-->
+          <span class="dot"></span> 
+        </div>
+
+<div id="project1" class="project-details" style="display: none;">
+  <h3>Company Expense Tracker</h3>
+
+  <h4>Problem Statement</h4>
+  <p>Manual tracking of expenses from PDF and image-based receipts is labour-intensive, prone to errors, and lacks consistency for finance review. 
+    There are often delays before expenses can be filed, and data entry typically requires access to a computer.</p>
+
+  <h4>Solution</h4>
+  <ul>
+    <li>Automatically extract and standardise data from uploaded PDF/image receipts using OCR and classification using Telegram.</li>
+    <li>Categorise expenses by type, department, and employee based on predefined business rules.</li>
+    <li>Generate a consolidated report highlighting anomalies or missing data for finance team validation.</li>
+  </ul>
+
+  <h4>Process</h4>
+<ul>
+  <li>
+    Employees upload receipts/invoices via a <strong>Telegram chatbot</strong>, 
+    which triggers OCR to extract key fields.
+  </li>
+  <li>
+    Extracted data is saved in a 
+    <strong>secure company Google Sheets</strong> document for finance tracking.
+  </li>
+  <li>
+    The system sends milestone updates to employees and forwards the expense 
+    report to <strong>Finance via email</strong>.
+  </li>
+  <li>
+    Finance reviews the report and submits an approval or rejection decision 
+    through email.
+  </li>
+  <li>
+    The decision is recorded in the tracker, and the employee is notified via 
+    <strong>Telegram and email</strong>.
+  </li>
+</ul>
+
+  <h4>Key Outcomes</h4>
+  <ul>
+    <li>Over 70% reduction in manual data entry time for expense processing.</li>
+    <li>Improved accuracy and consistency in expense categorisation and reporting.</li>
+    <li>Quicker month-end close and enhanced audit readiness.</li>
+  </ul>
+  <h4>Project screenshots</h4>
+  <div class="project-media">
+    <div class="bpmn">
+      <img src="assets/images/project1_process.jpg" alt="BPMN Workflow for Company Expense Tracker">
+    </div>
+    
+    <div class="screenshots">
+      <img src="assets/images/project1_assets.jpg" alt="Screenshots of Company Expanse Tracker.">
+    </div>
+    -->
+  </div>
+</div>
+
+<div id="project2" class="project-details" style="display: none;">
+  <h3>Semiconductor Nonconformance Monitoring</h3>
+
+<h4>Problem Statement</h4>
+<p>
+  In semiconductor manufacturing, nonconformance tracking for equipment issues such as glass breakage is often fragmented across MES, specialist tools, and ERP systems, 
+  resulting in delayed responses, poor visibility for quality teams, and inconsistent follow-through on corrective actions.
+</p>
+
+<h4>Solution</h4>
+<ul>
+  <li>Automate severity classification of equipment errors using predefined business rules (e.g. low, high, critical).</li>
+  <li>Automatically notify quality leads of high-risk cases and escalate critical events to corrective action agents via email.</li>
+  <li>Log all events, escalations, and resolutions in a centralised database to enable consistent tracking and reporting.</li>
+</ul>
+
+<h4>Process</h4>
+<ul>
+  <li>The system detects a nonconformance event (e.g. <strong>GLASS_BREAK</strong>) and logs the error.</li>
+  <li>Severity is automatically assessed; low-risk issues are logged, high-risk ones trigger an email to the <strong>Quality Lead</strong>.</li>
+  <li>The Quality Lead evaluates the issue; critical items are escalated to the <strong>Corrective Action Agent</strong>.</li>
+  <li>Corrective actions are created in the ERP (e.g. <strong>D365</strong>) and logged for follow-up.</li>
+  <li>All actions and status updates are stored in a centralised tracking system for auditability and dashboard visibility.</li>
+</ul>
+
+<h4>Key Outcomes</h4>
+<ul>
+  <li>Faster triage and resolution of critical equipment failures across the fab.</li>
+  <li>Clear escalation workflows and role separation between detection, review, and corrective action.</li>
+  <li>Real-time visibility through a centralised dashboard, enabling proactive quality management.</li>
+</ul>
+
+<h4>Project screenshots</h4>
+  <div class="project-media">
+    <div class="bpmn">
+      <img src="assets/images/project2_process.jpg" alt="BPMN Workflow for Semiconductor Nonconformance Monitoring">
+    </div>
+    <div class="screenshots">
+      <img src="assets/images/project2_dashboard.jpg" alt="Mock Dashboard for Equipment Nonconformance Monitoring">
+    </div>
+  </div>
+</div>
+
+<div id="project3" class="project-details" style="display: none;">
+  <h3>Automated ISO Certificate Validation</h3>
+
+  <h4>Problem Statement</h4>
+  <p>
+    Manual review of ISO certificates from manufacturers is slow, inconsistent, and prone to oversight, 
+    especially when tracking duplicates, expired certificates, or pending renewals. If not mitigated, this poses risks to compliance and vendor management.
+  </p>
+
+  <h4>Solution</h4>
+  <ul>
+    <li>Use AI to analyse uploaded ISO certificates and automate the approval or rejection decision based on content and metadata.</li>
+    <li>Perform database validation to check for duplicates and expiry before saving records.</li>
+    <li>Implement daily expiry checks and send automated email reminders for expiring certificates.</li>
+  </ul>
+
+  <h4>Process</h4>
+  <ul>
+    <li>The <strong>Manufacturer</strong> uploads an ISO certificate, which is received and analysed by the <strong>AI system</strong>.</li>
+    <li>The system sends the parsed certificate to the <strong>Reviewing Authority</strong> for a manual decision.</li>
+    <li>If approved, the certificate is checked for duplicates/expiry and saved to the database; else, a rejection email is sent to the <strong>Manufacturer</strong>.</li>
+    <li>Daily system checks categorise ISO records as <strong>valid, expired, or expiring</strong>.</li>
+    <li>Expiring certificates trigger email reminders to Manufacturers, prompting a re-evaluation process.</li>
+  </ul> 
+
+  <h4>Key Outcomes</h4>
+  <ul>
+    <li>Significant reduction in manual effort for ISO certificate validation and tracking.</li>
+    <li>Improved compliance and vendor governance through proactive expiry alerts.</li>
+    <li>Centralised document database with automated duplicate and validity checks.</li>
+  </ul>
+
+  <h4>Project screenshots</h4>
+  <div class="project-media">
+    <div class="bpmn">
+      <img src="assets/images/project3_process.jpg" alt="BPMN Workflow for Semiconductor Nonconformance Monitoring">
+    </div>
+    <div class="screenshots">
+      <img src="assets/images/project3_dashboard.jpg" alt="Mock Dashboard for Equipment Nonconformance Monitoring">
+    </div>
+  </div>
+</div>
+
+<div id="project4" class="project-details" style="display: none;">
+  <h3>Maintenance Bot for Teams Integration</h3>
+
+  <h4>Problem Statement</h4>
+  <p>
+    Maintenance request handling in production environments is often fragmented, leading to duplicated reports, inconsistent cost tracking, and slow communication between workers, asset managers, and finance teams.
+  </p>
+
+  <h4>Solution</h4>
+  <ul>
+    <li>Deploy a Teams-integrated bot to capture and triage maintenance requests from production staff in real time.</li>
+    <li>Automatically check for existing requests, assign escalation pathways, and route approvals to the correct asset manager.</li>
+    <li>Incorporate live cost projection workflows with the finance team to validate and escalate requests as needed.</li>
+  </ul>
+
+  <h4>Process</h4>
+  <ul>
+    <li>A production worker submits a maintenance request directly via the <strong>Teams bot</strong>.</li>
+    <li>The bot checks for existing requests; if found, it informs the worker and shares the point of contact.</li>
+    <li>If no existing request exists, a work order is generated and routed to the <strong>Asset Manager</strong> for approval.</li>
+    <li>Upon approval, the system triggers a cost estimation via the <strong>Finance Agent</strong>.</li>
+    <li>If cost is under threshold, the request is logged and confirmed; if over threshold, it’s escalated to the <strong>Finance Team</strong> for review.</li>
+  </ul>
+
+  <div class="project-media">
+    <div class="bpmn">
+      <img src="assets/images/project4_process.jpg" alt="BPMN Workflow for Maintenance Bot in Teams">
+      <img src="assets/images/project4_assets.jpg" alt="aintenance Bot in Teams Demo">
+    </div>
+  </div>
+
+  <h4>Key Outcomes</h4>
+  <ul>
+    <li>Reduced duplication of maintenance tickets and better tracking of existing issues.</li>
+    <li>Faster routing and approval of maintenance work through integrated Teams communication.</li>
+    <li>Improved coordination between asset managers and finance through real-time cost visibility and escalation paths.</li>
+  </ul>
+</div>
+
+<div id="project5" class="project-details" style="display: none;">
+  <h3>RAG Chatbot for Project Managers</h3>
+
+  <h4>Problem Statement</h4>
+  <p>
+    Project managers often struggle to quickly access reliable information across fragmented internal documents and evolving external sources, leading to delays in decision-making and duplicated research efforts.
+  </p>
+
+  <h4>Solution</h4>
+  <ul>
+    <li>Deploy a Retrieval-Augmented Generation (RAG) chatbot tailored for project management queries.</li>
+    <li>The chatbot first searches an internal knowledge base of current and past projects for relevant answers.</li>
+    <li>If no relevant internal data is found, it automatically queries trusted web sources to provide an up-to-date response.</li>
+  </ul>
+
+  <h4>Process</h4>
+  <ul>
+    <li>A project manager submits a question via the chatbot interface.</li>
+    <li>The chatbot performs a semantic search over the internal project knowledge base using vector embeddings.</li>
+    <li>If a relevant answer is found, it is returned immediately with source references.</li>
+    <li>If no internal match exists, the chatbot performs a targeted web search and yields a response.</li>
+    <li>The user can then decide whether to store this in the knowledge base or reject it.</li>
+  </ul>
+
+  <div class="project-media">
+    <div class="bpmn">
+      <img src="assets/images/project5_assets.jpg" alt="RAG Chatbot for Project Managers Workflow">
+    </div>
+  </div>
+
+  <h4>Key Outcomes</h4>
+  <ul>
+    <li>Faster, more accurate access to project-specific knowledge for managers.</li>
+    <li>Reduced reliance on manual digging through documentation or chasing updates from peers.</li>
+    <li>Real-time fallback to web-based answers ensures up-to-date and complete guidance.</li>
+  </ul>
+</div>
+
+<div id="project6" class="project-details" style="display: none;">
+  <h3>Automated EVM Dashboard Generator</h3>
+
+  <h4>Problem Statement</h4>
+  <p>
+    Manually calculating and presenting Earned Value Management (EVM) metrics from Excel or CSV project data is time-consuming, error-prone, and inconsistent across teams.
+  </p>
+
+  <h4>Solution</h4>
+  <ul>
+    <li>Build a lightweight app that parses Excel/CSV input and automatically generates a visual EVM dashboard.</li>
+    <li>Display key indicators such as project status (on track, delayed), budget alignment, and earned value metrics.</li>
+    <li>Enable instant insights for project managers without requiring spreadsheet manipulation or manual formula setup.</li>
+  </ul>
+
+  <h4>Process</h4>
+  <ul>
+    <li>User uploads a project progress file in Excel or CSV format.</li>
+    <li>The app extracts planned value, earned value, and actual cost data using predefined mappings.</li>
+    <li>It calculates common EVM metrics such as EV, PV, cost variance, and schedule variance automatically.</li>
+    <li>Results are displayed on a clean dashboard highlighting whether the project is <strong>on track</strong> and <strong>on budget</strong>.</li>
+    <li>Optional: export visual report as PDF or share via Teams/email.</li>
+  </ul>
+
+ <!-- <div class="project-media">
+    <div class="bpmn">
+      <img src="assets/images/project6_process.jpg" alt="EVM Dashboard Generator Workflow">
+    </div>
+  </div>-->
+
+  <h4>Key Outcomes</h4>
+  <ul>
+    <li>Instant, reliable view of project health using standard EVM metrics.</li>
+    <li>Eliminates manual EVM calculations and spreadsheet errors.</li>
+    <li>Supports rapid reporting and stakeholder visibility on cost and schedule performance.</li>
+  </ul>
+</div>
+
+</div>
+      </section>
+  </div>
+</main>
+  </body>
+</html>

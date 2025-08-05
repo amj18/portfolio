@@ -228,6 +228,10 @@ h2 {
   font-size: 1rem;
 }
 
+.project-details li {
+  font-size: 1rem;
+}
+
 .project-media {
   display: flex;
   flex-wrap: wrap;

@@ -81,16 +81,18 @@
         <p>Simplify integration with MES and ERP systems through lightweight monitoring of equipment defects. </p>
         <button onclick="showProject('project2')">Learn more</button>
       </div>
+		
       <div class="card">
         <img src="assets/images/project3.jpg" alt="Project 3">
-        <h3>Automated ISO Certificate Validation</h3>
-        <p>Track and monitor ISO compliance of manufacturers to ensure adherence to organisational and regulatory compliance requirements.</p>
+        <h3>Asset Management in Teams</h3>
+        <p>Streamline asset maintenance reporting by allowing production workers to raise, track, and escalate requests directly through Microsoft Teams.</p>
         <button onclick="showProject('project3')">Learn more</button>
       </div>
+
       <div class="card">
         <img src="assets/images/project4.jpg" alt="Project 4">
-        <h3>Maintenance Bot for Teams</h3>
-        <p>Streamline maintenance reporting by allowing production workers to raise, track, and escalate requests directly through Microsoft Teams.</p>
+        <h3>Automated ISO Certificate Validation</h3>
+        <p>Track and monitor ISO compliance of manufacturers to ensure adherence to organisational and regulatory compliance requirements.</p>
         <button onclick="showProject('project4')">Learn more</button>
       </div>
 
@@ -216,67 +218,24 @@
 </div>
 
 <div id="project3" class="project-details" style="display: none;">
-  <h3>Automated ISO Certificate Validation</h3>
+  <h3>Asset Management Bot for Teams Integration</h3>
 
   <h4>Problem Statement</h4>
   <p>
-    Manual review of ISO certificates from manufacturers is slow, inconsistent, and prone to oversight, 
-    especially when tracking duplicates, expired certificates, or pending renewals. If not mitigated, this poses risks to compliance and vendor management.
+    Maintenance request handling for physical assets in production environments is often fragmented, leading to duplicated reports, inconsistent cost tracking, and slow communication between workers, asset managers, and finance teams.
   </p>
 
   <h4>Solution</h4>
   <ul>
-    <li>Use AI to analyse uploaded ISO certificates and automate the approval or rejection decision based on content and metadata.</li>
-    <li>Perform database validation to check for duplicates and expiry before saving records.</li>
-    <li>Implement daily expiry checks and send automated email reminders for expiring certificates.</li>
-  </ul>
-	
-  <h4>Project screenshots</h4>
-  <div class="project-media">
-    <div class="bpmn">
-      <img src="assets/images/project3_process.jpg" alt="BPMN Workflow for ISO compliance Monitoring">
-    </div>
-    <div class="screenshots">
-      <img src="assets/images/project3_dashboard.JPG" alt="Mock Dashboard for ISO compliance Monitoring">
-    </div>
-  </div>
-	
-  <h4>Process</h4>
-  <ul>
-    <li>The <strong>Manufacturer</strong> uploads an ISO certificate, which is received and analysed by the <strong>AI system</strong>.</li>
-    <li>The system sends the parsed certificate to the <strong>Reviewing Authority</strong> for a manual decision.</li>
-    <li>If approved, the certificate is checked for duplicates/expiry and saved to the database; else, a rejection email is sent to the <strong>Manufacturer</strong>.</li>
-    <li>Daily system checks categorise ISO records as <strong>valid, expired, or expiring</strong>.</li>
-    <li>Expiring certificates trigger email reminders to Manufacturers, prompting a re-evaluation process.</li>
-  </ul> 
-
-  <h4>Key Outcomes</h4>
-  <ul>
-    <li>Significant reduction in manual effort for ISO certificate validation and tracking.</li>
-    <li>Improved compliance and vendor governance through proactive expiry alerts.</li>
-    <li>Centralised document database with automated duplicate and validity checks.</li>
-  </ul>
-</div>
-
-<div id="project4" class="project-details" style="display: none;">
-  <h3>Maintenance Bot for Teams Integration</h3>
-
-  <h4>Problem Statement</h4>
-  <p>
-    Maintenance request handling in production environments is often fragmented, leading to duplicated reports, inconsistent cost tracking, and slow communication between workers, asset managers, and finance teams.
-  </p>
-
-  <h4>Solution</h4>
-  <ul>
-    <li>Deploy a Teams-integrated bot to capture and triage maintenance requests from production staff in real time.</li>
+    <li>Deploy a Teams-integrated bot to capture and triage asset maintenance requests from production staff in real time.</li>
     <li>Automatically check for existing requests, assign escalation pathways, and route approvals to the correct asset manager.</li>
     <li>Incorporate live cost projection workflows with the finance team to validate and escalate requests as needed.</li>
   </ul>
 <h4>Project screenshots</h4>
   <div class="project-media">
     <div class="bpmn">
-      <img src="assets/images/project4_process.jpg" alt="BPMN Workflow for Maintenance Bot in Teams">
-      <img src="assets/images/project4_assets.JPG" alt="Maintenance Bot in Teams Demo">
+      <img src="assets/images/project3_process.jpg" alt="BPMN Workflow for Asset Maintenance Bot in Teams">
+      <img src="assets/images/project3_assets.JPG" alt="Maintenance Bot in Teams Demo">
     </div>
   </div>
   <h4>Process</h4>
@@ -296,6 +255,49 @@
   </ul>
 </div>
 
+<div id="project4" class="project-details" style="display: none;">
+  <h3>Automated ISO Certificate Validation</h3>
+
+  <h4>Problem Statement</h4>
+  <p>
+    Manual review of ISO certificates from manufacturers is slow, inconsistent, and prone to oversight, 
+    especially when tracking duplicates, expired certificates, or pending renewals. If not mitigated, this poses risks to compliance and vendor management.
+  </p>
+
+  <h4>Solution</h4>
+  <ul>
+    <li>Use AI to analyse uploaded ISO certificates and automate the approval or rejection decision based on content and metadata.</li>
+    <li>Perform database validation to check for duplicates and expiry before saving records.</li>
+    <li>Implement daily expiry checks and send automated email reminders for expiring certificates.</li>
+  </ul>
+	
+  <h4>Project screenshots</h4>
+  <div class="project-media">
+    <div class="bpmn">
+      <img src="assets/images/project4_process.jpg" alt="BPMN Workflow for ISO compliance Monitoring">
+    </div>
+    <div class="screenshots">
+      <img src="assets/images/project4_dashboard.JPG" alt="Mock Dashboard for ISO compliance Monitoring">
+    </div>
+  </div>
+	
+  <h4>Process</h4>
+  <ul>
+    <li>The <strong>Manufacturer</strong> uploads an ISO certificate, which is received and analysed by the <strong>AI system</strong>.</li>
+    <li>The system sends the parsed certificate to the <strong>Reviewing Authority</strong> for a manual decision.</li>
+    <li>If approved, the certificate is checked for duplicates/expiry and saved to the database; else, a rejection email is sent to the <strong>Manufacturer</strong>.</li>
+    <li>Daily system checks categorise ISO records as <strong>valid, expired, or expiring</strong>.</li>
+    <li>Expiring certificates trigger email reminders to Manufacturers, prompting a re-evaluation process.</li>
+  </ul> 
+
+  <h4>Key Outcomes</h4>
+  <ul>
+    <li>Significant reduction in manual effort for ISO certificate validation and tracking.</li>
+    <li>Improved compliance and vendor governance through proactive expiry alerts.</li>
+    <li>Centralised document database with automated duplicate and validity checks.</li>
+  </ul>
+</div>
+	
 <div id="project5" class="project-details" style="display: none;">
   <h3>RAG Chatbot for Project Managers</h3>
 
